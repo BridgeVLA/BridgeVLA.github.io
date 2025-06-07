@@ -457,8 +457,11 @@
             The COLOSSEUM benchmark is an extension to the RLBench benchmark. 
             The model is trained on the data from the original RLBench benchmark but evaluated in environments spanning 12 axes of perturbations. 
             These perturbations, which are unseen during training, encompass changes in object texture, color, and size, backgrounds, lighting,
-            distractors and camera poses. Specifically, our evaluation consists of three parts: 1) train the model with the original RLBench data without perturbations (100 trajectories per task) on 20 tasks.
-            2) evaluate each task over 25 trials per perturbation. Besides the 12 types of perturbations, we also evaluate on basic variations from the original RLBench (denoted as RLBench in Tab. 2),
+            distractors and camera poses. Specifically, our evaluation includes three steps: 
+            1) train the model with the original RLBench data without perturbations (100 trajectories per task) on 20 tasks,
+            2) evaluate each task over 25 trials per perturbation,
+            3) compute the average success rate of all evaluated tasks for every perturbation.
+            Besides the 12 types of perturbations, we also evaluate on basic variations from the original RLBench (denoted as RLBench in Tab. 2),
             and a more challenging setting which combines all the 12 types of perturbations (denoted as All Perturbations in Tab. 2).
           </p>
 
