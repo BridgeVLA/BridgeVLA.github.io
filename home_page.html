@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title> BridgeVLA </title>
+
+  <link rel="icon" href="./static/images/logo.png">
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/leaderboard.css">
+  <link rel="stylesheet" href="./static/css/video-player.css">
+
+  <script type="text/javascript" src="static/js/sort-table.js" defer></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/explorer-index.js"></script>
+  <script src="./static/js/question_card.js"></script>
+
+  <script src="./static/js/leaderboard_testmini.js"></script>  
+  <script src="./data/results/output_folders.js" defer></script>
+  <script src="./data/results/model_scores.js" defer></script>
+
+  <script src="./visualizer/data/data_public.js" defer></script>
+
+  <style>
+    .no-sort {
+        cursor: default;
+        pointer-events: none;
+        background-image: none !important; /* Remove the sort arrow */
+    }
+
+    .title-bridgevla {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2em;
+      font-weight: 700;
+      background: linear-gradient(45deg, #2196F3, #4CAF50);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+      letter-spacing: 2px;
+      margin-bottom: 0.5em;
+      position: relative;
+      display: inline-block;
+      text-align: center;
+      padding-bottom: 0.2em;
+    }
+
+    .title-bridgevla::after {
+      content: '';
+      position: absolute;
+      bottom: -22px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(45deg, #2196F3, #4CAF50);
+      border-radius: 2px;
+    }
+
+    .title-bridgevla img {
+      width: 1.5em;
+      filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+    }
+  </style>
+
+</head>
+<body>
+
+  
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <p style="font-size:18px; display: inline; margin-right: -2px; margin-top: 12px;">🔥</p>
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://gr1-manipulation.github.io/">
+            <b>GR-1</b> 
+          </a>
+          <a class="navbar-item" href="https://gr-mg.github.io/">
+            <b>GR-MG</b> 
+          </a>
+          <a class="navbar-item" href="https://gr2-manipulation.github.io/">
+            <b>GR-2</b> 
+          </a>
+          <a class="navbar-item" href="https://robovlms.github.io/">
+            <b>RoboVLMs</b> 
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title is-bold">
+            <img src="static/images/logo.png" style="width:2.5em;vertical-align: middle" alt="Logo"/>
+            <span class="bridgevla" style="vertical-align: middle;text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5)">BridgeVLA</span>
+            </h1>
+          <h2 class="subtitle is-3 publication-subtitle ", style="width: 100%;margin-bottom: 20px;">
+            <strong>Input-Output Alignment for Efficient 3D Manipulation Learning with Vision-Language Models</strong>
+          </h2>
+          <h3 class="subtitle is-4 publication-subtitle" style="font-weight: bold; margin-bottom: 20px;">
+            🏆 COLOSSEUM Challenge Champion @ CVPR 2025 GRAIL Workshop
+          </h3>
+          
+          
+          <div class="is-size-5 publication-authors", style="width: 100%; margin: 15px auto;", >
+            <span class="author-block"><a href="https://github.com/LPY1219" target="_blank" style="color: black;">Peiyan Li</a>,<sup>1</sup><sup>,</sup><sup>2</sup><sup>,</sup><sup>3</sup><sup>,</sup><sup>†</sup></span>
+            <span class="author-block"><a href="https://github.com/YixiangChen515" target="_blank" style="color: black;">Yixiang Chen</a>,<sup>1</sup><sup>,</sup><sup>3</sup></span>
+            <span class="author-block"><a href="https://scholar.google.com/citations?user=7u0TYgIAAAAJ&hl=zh-CN&oi=ao" target="_blank" style="color: black;">Hongtao Wu</a>,<sup>2</sup><sup>,</sup><sup>†</sup><sup>,</sup><sup>*</sup></span>
+            <span class="author-block"><a href="https://yusufma03.github.io/" target="_blank" style="color: black;">Xiao Ma</a>,<sup>2</sup><sup>,</sup><sup>†</sup></span>
+            <span class="author-block"><a href="https://bridgevla.github.io/" target="_blank" style="color: black;">Xiangnan Wu</a>,<sup>1</sup></span>
+            <br>
+            <span class="author-block"><a href="https://yanrockhuang.github.io/" target="_blank" style="color: black;">Yan Huang</a>,<sup>1</sup><sup>,</sup><sup>3</sup><sup>,</sup><sup>4</sup></span>
+            <span class="author-block"><a href="https://scholar.google.com/citations?hl=zh-CN&user=8kzzUboAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" style="color: black;">Liang Wang</a>,<sup>1</sup><sup>,</sup><sup>3</sup></span>
+            <span class="author-block"><a href="https://www.taokong.org/" target="_blank" style="color: black;">Tao Kong</a>,<sup>2</sup></span>
+            <span class="author-block"><a href="https://scholar.google.com/citations?hl=en&user=W-FGd_UAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" style="color: black;">Tieniu Tan</a>,<sup>1</sup><sup>,</sup><sup>3</sup><sup>,</sup><sup>5</sup><sup>,</sup><sup>*</sup></span>
+        </div>
+
+        <div class="is-size-5 publication-authors", style=" margin: 10px auto;", >
+          <span class="author-block"><sup>†</sup>Project Lead,</span>
+          <span class="author-block"><sup>*</sup>Corresponding Author</span>
+        </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>CASIA,</span>
+            <span class="author-block"><sup>2</sup>Bytedance Seed,</span>
+            <span class="author-block"><sup>3</sup>UCAS,</span>
+            <span class="author-block"><sup>4</sup>FiveAges,</span>
+            <span class="author-block"><sup>5</sup>NJU</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://bridgevla.github.io/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv" style="color: #B31B1B;"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://bridgevla.github.io/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code Coming Soon</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://bridgevla.github.io/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <!-- <i class="far fa-huggingface"></i> -->
+                      <p style="font-size:18px">🤗</p>
+                  </span>
+                  <span>Dataset Coming Soon</span>
+                </a>
+              </span> 
+              <!-- Checkpoint Link. -->
+              <span class="link-block">
+                <a href="https://bridgevla.github.io/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <p style="font-size:18px"><i class="fas fa-robot" style="color: #2196F3;"></i></p>
+                  </span>
+                  <span>Checkpoints Coming Soon</span>
+                </a>
+              </span>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- TLDR Section -->
+<section class="section" style="padding-top: 1rem; padding-bottom: 1rem;">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="tldr-box" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); 
+                                    border-left: 5px solid #4a90e2; 
+                                    padding: 20px; 
+                                    border-radius: 8px; 
+                                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+          <h2 class="title is-4" style="color: #2c3e50; margin-bottom: 10px;">TL;DR:</h2>
+          <p class="is-size-5" style="color: #34495e; line-height: 1.6;">
+            We propose a 3D VLA framework that aligns the input and output within a shared 2D space in both pre-training and fine-tuning, enabling strong data efficiency and achieves impressive performance in both basic and generalization settings.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Video Section -->
+<div style="display: flex; justify-content: center; margin: 40px 0;">
+  <div style="width: 80%; max-width: 900px;">
+    <div style="box-shadow: 0 4px 16px rgba(0,0,0,0.08); border-radius: 12px; overflow: hidden; background: #fff;">
+      <video style="width: 100%; display: block;" controls autoplay muted loop>
+        <source src="static/videos/long.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          Recently, leveraging pre-trained vision-language models (VLMs) for building vision-language-action (VLA) models has emerged as a promising approach to effective robot manipulation learning.
+          However, existing methods predominantly process 2D inputs, excluding the valuable 3D information. 
+          While some recent studies suggest injecting 3D signals into the VLM for action prediction, they overlook the spatial structure inherent in 3D data, leading to low sample efficiency. 
+          In this paper, we introduce BridgeVLA, a novel 3D VLA model that (1) project 3D inputs to multiple 2D images, ensuring input alignment with the VLM backbone, 
+          and (2) utilize 2D heatmaps for action prediction, unifying the input and output spaces within a consistent 2D image space. 
+          In addition, we propose a scalable pre-training method that equips the VLM backbone with the capability to predict 2D heatmaps for object grounding before downstream policy learning.
+          Extensive experiments show the proposed method is able to learn 3D manipulation efficiently and effectively.
+          BridgeVLA outperforms the state-of-the-art baselines across multiple benchmarks. 
+          In RLBench, it attains a substantially higher success rate (88.2% vs. 81.4%). 
+          In COLOSSEUM, it demonstrates significantly better performance (64.0% vs. 56.7%) in the challenge generalization scenes.
+          In GemBench, it is the only method that achieves a 50% average success rate across all four evaluation settings.
+          In real-robot experiments, BridgeVLA outperforms the state-of-the-art baseline method by 32% on average, and is able to generalize robustly in multiple out-of-distribution settings,
+          including visual disturbance and unseen instructions.
+          Remarkably, it is able to achieve a success rate of 96.8% on 10+ tasks with with only 3 trajectories per task, highlighting its extraordinary sample efficiency.
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+</div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <div class="box" style="margin-top: 0; margin-bottom: 1rem;">
+            <div class="content has-text-centered">
+              <img src="static/images/teaser.png" alt="grade-lv" width="100%" style="max-width: 1200px; height: auto;"/>
+              <p>Figure 1: Overview of BridgeVLA</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+</section>
+
+<!-- METHOD SECTION -->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+  <h1 class="title is-1 mathvista_other">
+    <span class="mathvista_other" style="vertical-align: middle">Method</span>
+  </h1>
+  </div>
+</section>
+            
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p>As illustrated in Fig. 2, BridgeVLA employs a dual-phase training recipe.</p>
+        
+          <h4 class="title is-5 mt-5 mb-3">2D Heatmap Pre-training</h4>
+          <p>
+            We train BridgeVLA on 2D object detection datasets. The model takes as input an image and language describing the target object and outputs a 2D heatmap which highlights regions of interest that correspond to the target object.
+          </p>
+        
+          <h4 class="title is-5 mt-5 mb-3">3D Action Fine-tuning</h4>
+          <p>
+            The model takes as input three orthographic projection images of a 3D point cloud and a language instruction. It outputs three 2D heatmaps, which highlight the position of the end-effector in the next keyframe across all three views. For the remaining action components, it uses an MLP to aggregate the image feature tokens to predict the rotation action, gripper action, and collision flag of the next keyframe.
+          </p>
+        
+          <div class="box" style="margin-top: 2rem; margin-bottom: 2rem;">
+            <div class="content has-text-centered">
+              <img src="static/images/network.png" alt="grade-lv" width="100%" style="max-width: 1200px; height: auto;"/>
+              <p>Figure 2: Network architecture of BridgeVLA</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+</section>
+
+<!-- Simulation-->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 mathvista_other">Simulation Experiments</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content">
+          <h2 class="title is-3 has-text-centered">RLBench</h2>
+          <p class="has-text-justified">
+            To test our model's ability to deal with complex manipulation tasks, we evaluate BridgeVLA on RLBench, a benchmark implemented in CoppeliaSim using a Franka Panda robot mounted
+            with a parallel-jaw gripper. Totally, we choose 18 tasks from RLBench, and each task is provided with 100 expert demonstrations.
+            And each demonstration is paired with language instruction and multiple keyframes. Models are evaluated via binary success rates over 25 trials per task,
+            with a maximum of 25 action steps per trial. The results are shown in Tab. 1.
+          </p>
+          <div class="box" style="margin-top: 1rem; margin-bottom: 1rem;">
+            <div class="content has-text-centered">
+              <img src="static/images/RLBench.png" alt="grade-lv" width="100%" style="max-width: 1200px; height: auto;"/>
+              <p>Table 1: Results on RLBench.</p>
+            </div>
+          </div>
+
+          <!-- RLBench Videos -->
+          <h3 class="title is-4 has-text-centered">RLBench Task Demonstrations</h3>
+          
+          <!-- Row 1 -->
+          <div class="columns is-multiline">
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/RLBench/stack_4_rose_blocks_success_0.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Stack 4 Rose Blocks</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/RLBench/put_the_chocolate_jello_in_the_cupboard_success_1.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Put Chocolate Jello in Cupboard</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/RLBench/place_3_cups_on_the_cup_holder_success_3.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Place 3 Cups on Cup Holder</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="columns is-multiline">
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/RLBench/close_the_blue_jar_success_8.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Close Blue Jar</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/RLBench/sweep_dirt_to_the_short_dustpan_success_10.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Sweep Dirt to Dustpan</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/RLBench/screw_in_the_lime_light_bulb_success_12.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Screw in Lime Light Bulb</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 3 -->
+          <div class="columns is-multiline">
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/RLBench/put_the_money_away_in_the_safe_on_the_top_shelf_success_12.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Put Money in Safe</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/RLBench/take_the_steak_off_the_grill_success_15.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Take Steak off Grill</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/RLBench/stack_the_other_cups_on_top_of_the_navy_cup_success_18.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Stack Cups on Navy Cup</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- COLOSSEUM Section -->
+          <h2 class="title is-3 has-text-centered">COLOSSEUM</h2>
+          <p class="has-text-justified">
+            To systematically evaluate the generalization capabilities of BridgeVLA, we further evaluate on the COLOSSEUM benchmark. 
+            The COLOSSEUM benchmark is an extension to the RLBench benchmark. 
+            The model is trained on the data from the original RLBench benchmark but evaluated in environments spanning 12 axes of perturbations. 
+            These perturbations, which are unseen during training, encompass changes in object texture, color, and size, backgrounds, lighting,
+            distractors and camera poses. Specifically, our evaluation includes three steps: 
+            1) train the model with the original RLBench data without perturbations (100 trajectories per task) on 20 tasks,
+            2) evaluate each task over 25 trials per perturbation,
+            3) compute the average success rate of all evaluated tasks for every perturbation.
+            Besides the 12 types of perturbations, we also evaluate on basic variations from the original RLBench (denoted as RLBench in Tab. 2),
+            and a more challenging setting which combines all the 12 types of perturbations (denoted as All Perturbations in Tab. 2).
+          </p>
+
+          <div class="box" style="margin-top: 1rem; margin-bottom: 1rem;">
+            <div class="content has-text-centered">
+              <img src="static/images/COLOSSEUM.png" alt="grade-lv" width="100%" style="max-width: 1200px; height: auto;"/>
+              <p>Table 2: Results on COLOSSEUM.</p>
+            </div>
+          </div>
+
+          <!-- COLOSSEUM Videos -->
+          <h3 class="title is-4 has-text-centered">COLOSSEUM Task Demonstrations</h3>
+          
+          <!-- Row 1 -->
+          <div class="columns is-multiline">
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/COLOSSEUM/variations/scoop_with_spatula_11_scoop_up_the_cube_and_lift_it_with_the_spatula_success_2.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Scoop with Spatula</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/COLOSSEUM/variations/insert_onto_square_peg_put_the_ring_on_the_red_spoke_success_0.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Insert onto Square Peg</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/COLOSSEUM/variations/close_laptop_lid_2_close_laptop_lid_success_9.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Close Laptop Lid</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="columns is-multiline">
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/COLOSSEUM/variations/move_hanger_move_hanger_onto_the_other_rackmove_the_hanger_from_one_rack_to_the_other_success_0.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Move Hanger</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/COLOSSEUM/variations/basketball_in_hoop_put_the_ball_in_the_hoop_success_0.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Basketball in Hoop</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/COLOSSEUM/variations/reach_and_drag_10_use_the_stick_to_drag_the_cube_onto_the_red_target_success_13.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Reach and Drag</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 3 -->
+          <div class="columns is-multiline">
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/COLOSSEUM/variations/straighten_rope_straighten_rope_success_0.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Straighten Rope</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/COLOSSEUM/variations/turn_oven_on_1_turn_on_the_oven_success_16.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Turn Oven On</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/COLOSSEUM/variations/hockey_1_hit_the_ball_into_the_net_success_2.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Hockey Hit</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 4 -->
+          <!-- <div class="columns is-multiline">
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/COLOSSEUM/variations/put_money_in_safe_put_the_money_away_in_the_safe_on_the_bottom_shelf_success_1.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Put Money in Safe</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/COLOSSEUM/variations/place_wine_at_rack_location_stack_the_wine_bottle_to_the_middle_of_the_rack_success_1.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Place Wine at Rack</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/COLOSSEUM/variations/get_ice_from_fridge_get_ice_from_fridge_success_1.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Get Ice from Fridge</p>
+              </div>
+            </div>
+          </div> -->
+
+
+          <!-- GemBench Section -->
+          <h2 class="title is-3 has-text-centered">GemBench</h2>
+          <p class="has-text-justified">
+          To more comprehensively assess the generalization ability of our proposed method, we evaluate BridgeVLA on GemBench, 
+          a comprehensive hierarchical benchmark built on the RLBench simulator. 
+          GemBench is designed to rigorously test 3D manipulation policies across a wide range of scenarios, 
+          covering 60 tasks and 123 variations organized into four progressively challenging levels—from simple novel placements to complex multi-step tasks 
+          involving novel object shapes and articulations. BridgeVLA demonstrates outstanding performance, achieving the highest average success rate across all evaluation levels. 
+          Notably, it sets new state-of-the-art results in both the L2 (novel rigid objects) and L3 (novel articulated objects) settings,
+          where generalization to unseen object shapes and part combinations is particularly challenging. We show the results in Tab. 3.
+          </p>
+
+          <div class="box" style="margin-top: 1rem; margin-bottom: 1rem;">
+            <div class="content has-text-centered">
+              <img src="static/images/GemBench.png" alt="grade-lv" width="100%" style="max-width: 1200px; height: auto;"/>
+              <p>Table 3: Results on GemBench.</p>
+            </div>
+          </div>
+
+          <!-- GemBench Videos -->
+          <h3 class="title is-4 has-text-centered">GemBench Task Demonstrations</h3>
+          
+          <!-- Row 1 -->
+          <div class="columns is-multiline">
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/gembench/stack_blocks_sample.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Stack Blocks</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/gembench/stack_cups_sample.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Stack Cups</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/gembench/put_money_in_safe_sample.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Put Money in Safe</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="columns is-multiline">
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/gembench/close_laptoplid_sample.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Close Laptop Lid</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/gembench/close_microwave_sample.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Close Microwave</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/gembench/close_grill_sample.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Close Grill</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 3 -->
+          <div class="columns is-multiline">
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/gembench/push_button_sample.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Push Button</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/gembench/take_shoe_out_of_box_sample.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Take Shoe Out of Box</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/gembench/toilet_seat_up_sample.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Toilet Seat Up</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Real -->
+          <h2 class="title is-3 has-text-centered">Real-World Experiments</h2>
+          <p class="has-text-justified">
+            We conduct real-robot experiments to further verify our model's performance. A total of 13 manipulation tasks are evaluated, covering a spectrum from simple pick-and-place to long-horizon behaviors such as opening a drawer and placing objects inside.
+          </p>
+
+          <h4 class="title is-5 mt-5 mb-3">Evaluation Settings</h4>
+          <p class="has-text-justified">
+            To systematically evaluate the robustness and generalization of BridgeVLA, we design seven distinct settings:
+          </p>
+
+          <div class="ml-4">
+            <p class="has-text-justified mb-3">
+              <strong>Basic:</strong> Tasks are evaluated under the same environmental conditions as training. This setting serves as a sanity check to ensure the model performs well under familiar conditions.
+            </p>
+
+            <p class="has-text-justified mb-3">
+              <strong>Distractor:</strong> Visually similar but irrelevant objects are added to the workspace. These distractors share shape or color characteristics with target objects, testing the model's ability to distinguish targets amid ambiguity.
+            </p>
+
+            <p class="has-text-justified mb-3">
+              <strong>Lighting:</strong> The robot operates under significantly different illumination, such as turning off overhead lights, to test robustness to lighting changes that affect the appearance of the scene.
+            </p>
+
+            <p class="has-text-justified mb-3">
+              <strong>Background:</strong> The visual background is altered by changing tablecloths (three variants in total), assessing the model's invariance to background textures and colors.
+            </p>
+
+            <p class="has-text-justified mb-3">
+              <strong>Height:</strong> All manipulable objects are placed on a raised surface (a drawer 9.5 cm above the base level), requiring the model to adapt its control to new object elevations.
+            </p>
+
+            <p class="has-text-justified mb-3">
+              <strong>Combination:</strong> Novel combinations of known objects and skills are introduced. While both the objects (e.g., a red block and green plate) and the manipulation skill (e.g., place A in B) are present in the training data, the pairing is new (e.g., "place the red block in the green plate"), challenging the model to generalize to unseen instructions.
+            </p>
+
+            <p class="has-text-justified mb-3">
+              <strong>Category:</strong> The model is asked to manipulate entirely unseen object categories during training. Seven such objects are introduced to evaluate whether pretrained visual-linguistic knowledge enables effective zero-shot generalization.
+            </p>
+          </div>
+
+          <h4 class="title is-5 mt-5 mb-3">Results</h4>
+          <p class="has-text-justified">
+            In addition to the full model, we compare against RVT-2, the strongest simulation baseline, and an ablated variant of BridgeVLA without our proposed 2D-heatmap pretraining.
+            The results are shown in Fig. 4.
+            BridgeVLA outperforms both baselines in six of the seven settings, and maintains high robustness under visual disturbances (Distractor, Background).
+          </p>
+
+          <p class="has-text-justified">
+            Furthermore, it achieves a 96.8% success rate in the Basic setting even with only 3 training trajectories per task, showing remarkable data efficiency. The results also validate the effectiveness of our 2D-heatmap pretraining in connecting language and vision for compositional task generalization.
+          </p>
+
+          <div class="box" style="margin-top: 1rem; margin-bottom: 1rem;">
+            <div class="content has-text-centered">
+              <img src="static/images/real.png" alt="grade-lv" width="100%" style="max-width: 1200px; height: auto;"/>
+              <p>Figure 4: Real-robot setup and results.</p>
+            </div>
+          </div>
+
+          <h3 class="title is-4 has-text-centered">Background</h3>
+          
+          <div class="columns is-multiline">
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/real_reduce_size/background/background_place_the_red_block_in_the_blue_plate_1_41_caption.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Place red block in blue plate</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/real_reduce_size/background/background_put_the_RedBull_can_in_the_top_shelf_2_40_caption.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Put RedBull can on top shelf</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/real_reduce_size/background/background_put_the_zebra_in_the_upper_drawer_3_70_caption.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Put zebra in upper drawer</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lighting Section -->
+          <h3 class="title is-4 has-text-centered">Lighting</h3>
+          <div class="columns is-multiline">
+            <div class="column is-one-third">
+                <div class="box">
+                    <video width="100%" controls>
+                        <source src="static/videos/real_reduce_size/lighting/illumination_put_the_RedBull_can_in_the_top_shelf_2_34_caption.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="has-text-centered">Put RedBull can on top shelf</p>
+                </div>
+            </div>
+            <div class="column is-one-third">
+                <div class="box">
+                    <video width="100%" controls>
+                        <source src="static/videos/real_reduce_size/lighting/illumination_press_sanitizer_2_16_caption.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="has-text-centered">Press sanitizer</p>
+                </div>
+            </div>
+            <div class="column is-one-third">
+                <div class="box">
+                    <video width="100%" controls>
+                        <source src="static/videos/real_reduce_size/lighting/illumination_put_the_giraffe_in_the_lower_drawer_1_69_caption.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="has-text-centered">Put giraffe in lower drawer</p>
+                </div>
+            </div>
+          </div>
+
+          <!-- Distractor Section -->
+          <h3 class="title is-4 has-text-centered">Distractor</h3>
+          <div class="columns is-multiline">
+            <div class="column is-one-third">
+                <div class="box">
+                    <video width="100%" controls>
+                        <source src="static/videos/real_reduce_size/distractor/Disturbance_place_the_orange_block_in_the_green_plate_2_42_caption.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="has-text-centered">Place orange block in green plate</p>
+                </div>
+            </div>
+            <div class="column is-one-third">
+                <div class="box">
+                    <video width="100%" controls>
+                        <source src="static/videos/real_reduce_size/distractor/Disturbance_put_the_giraffe_in_the_lower_drawer_1_71_caption.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="has-text-centered">Put giraffe in lower drawer</p>
+                </div>
+            </div>
+            <div class="column is-one-third">
+                <div class="box">
+                    <video width="100%" controls>
+                        <source src="static/videos/real_reduce_size/distractor/Disturbance_press_sanitizer_1_16_caption.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="has-text-centered">Press sanitizer</p>
+                </div>
+            </div>
+          </div>
+
+          <!-- Combination Section -->
+          <h3 class="title is-4 has-text-centered">Combination</h3>
+          <div class="columns is-multiline">
+            <div class="column is-one-third">
+                <div class="box">
+                    <video width="100%" controls>
+                        <source src="static/videos/real_reduce_size/combination/combination_put_the_orange_block_in_the_lower_drawer_1_74_caption.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="has-text-centered">Put orange block in lower drawer</p>
+                </div>
+            </div>
+            <div class="column is-one-third">
+                <div class="box">
+                    <video width="100%" controls>
+                        <source src="static/videos/real_reduce_size/combination/combination_put_the_RedBull_can_in_the_green_plate_1_41_caption.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="has-text-centered">Put RedBull can in green plate</p>
+                </div>
+            </div>
+            <div class="column is-one-third">
+                <div class="box">
+                    <video width="100%" controls>
+                        <source src="static/videos/real_reduce_size/combination/combination_place_the_yellow_block_in_the_purple_plate_4_41_caption.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="has-text-centered">Place yellow block in purple plate</p>
+                </div>
+            </div>
+          </div>
+
+          <!-- Height Section -->
+          <h3 class="title is-4 has-text-centered">Height</h3>
+          <div class="columns is-multiline">
+            <div class="column is-one-third">
+                <div class="box">
+                    <video width="100%" controls>
+                        <source src="static/videos/real_reduce_size/height/height_press_sanitizer_2_17_caption.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="has-text-centered">Press sanitizer</p>
+                </div>
+            </div>
+            <div class="column is-one-third">
+                <div class="box">
+                    <video width="100%" controls>
+                        <source src="static/videos/real_reduce_size/height/height_put_the_soda_can_in_the_bottom_shelf_3_41_caption.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="has-text-centered">Put soda can on bottom shelf</p>
+                </div>
+            </div>
+            <div class="column is-one-third">
+                <div class="box">
+                    <video width="100%" controls>
+                        <source src="static/videos/real_reduce_size/height/height_place_the_red_block_in_the_blue_plate_1_46_caption.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="has-text-centered">Place red block in blue plate</p>
+                </div>
+            </div>
+          </div>
+
+          <!-- Category Section -->
+          <h3 class="title is-4 has-text-centered">Category</h3>
+          <div class="columns is-multiline">
+            <div class="column is-one-third">
+                <div class="box">
+                    <video width="100%" controls>
+                        <source src="static/videos/real_reduce_size/category/category_put_the_peach_in_the_bottom_shelf_6_43_caption.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="has-text-centered">Put peach on bottom shelf</p>
+                </div>
+            </div>
+            <div class="column is-one-third">
+                <div class="box">
+                    <video width="100%" controls>
+                        <source src="static/videos/real_reduce_size/category/category_place_the_bottle_in_the_blue_plate_3_42_caption.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="has-text-centered">Place bottle in blue plate</p>
+                </div>
+            </div>
+            <div class="column is-one-third">
+                <div class="box">
+                    <video width="100%" controls>
+                        <source src="static/videos/real_reduce_size/category/category_put_the_panda_in_the_lower_drawer_1_69_caption.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="has-text-centered">Put panda in lower drawer</p>
+                </div>
+            </div>
+          </div>
+
+          <h2 class="title is-3 has-text-centered">Failure Cases</h2>
+          <p class="has-text-justified">
+          Although our method outperforms baseline methods in the Category setting, its absolute success rate is not high. 
+          We show some failure cases below.
+
+          <div class="columns is-multiline">
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/real_reduce_size/failure/category_place_the_bread_in_the_green_plate_4_52_caption.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Place bread in green plate</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/real_reduce_size/failure/category_put_the_apple_in_the_top_shelf_2_54_caption.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Put apple on top shelf</p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box">
+                <video width="100%" controls>
+                  <source src="static/videos/real_reduce_size/failure/category_put_the_peach_in_the_bottom_shelf_5_22_caption.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-centered">Put peach on bottom shelf</p>
+              </div>
+            </div>
+          </div>
+
+
+
+          We believe this relatively low performance is not due to BridgeVLA forgetting the knowledge gained from pre-training, 
+          as it still predicts heatmaps accurately when provided with samples from the pre-training dataset after fine-tuning (see Fig.5).
+          Instead, we hypothesize that the reduced performance stems from two factors: 
+          1) The images in the pre-training dataset are captured from third-person views, which differ significantly from the projection images in our robot data;
+          2) The pre-training task focuses solely on object localization, whereas manipulation involves predicting keypoints that do not correspond to an object. 
+          Exploring how to fully utilise such preserved pre-training knowledge for manipulation is an interesting direction for future research.
+          </p>
+
+          <div class="box" style="margin-top: 1rem; margin-bottom: 1rem;">
+            <div class="content has-text-centered">
+              <img src="static/images/predicted_heatmap.png" alt="grade-lv" width="100%" style="max-width: 1200px; height: auto;"/>
+              <p>Figure 5: Prediction on pre-training data after fine-tuning.</p>
+            </div>
+          </div>
+
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+</section>
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 mathvista_other" id="citation">Citation</h1>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content">
+          <pre><code>
+    @article{XXXX,
+      title={BridgeVLA: Input-Output Alignment for Efficient 3D Manipulation Learning with Vision-Language Models},
+      author={Anonymous Authors},
+      journal={XXX},
+      year={2025}
+    }
+</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container" style="width: 60%;">
+  <style>
+      pre {
+        background-color: #f4f4f4;
+        padding: 5px; /* Adjust padding to 5px */
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        overflow-x: auto; /* Allow horizontal scrolling */
+    }
+    code {
+        font-family: Consolas, "Courier New", monospace;
+        color: #d63384; /* Code text color */
+    }
+  </style>
+
+
+  </div>
+</section>
+
+
+<footer class="footer">
+  <!-- <div class="container"> -->
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p style="text-align: center;">
+            This website is adapted from <a href="https://mm-rlhf.github.io/">MM-RLHF</a> and <a href="https://video-mme.github.io/">Video-MME</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  <!-- </div> -->
+</footer>
+
+</body>
+</html>
+

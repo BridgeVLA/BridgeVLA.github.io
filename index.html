@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BridgeVLA: Welcome</title>
+  <link rel="icon" href="./static/images/logo.png">
+  <!-- Local Libraries and Stylesheets -->
+  <link href="static/css/OverlayScrollbars.min.css" rel="stylesheet">
+  <link href="static/css/all.min.css" rel="stylesheet">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="static/css/styles.css">
+  <!-- Local Scripts -->
+  <script src="static/js/jquery.min.js" defer></script>
+  <script src="static/js/gsap.min.js" defer></script>
+  <script src="static/js/ScrollTrigger.min.js" defer></script>
+  <script src="static/js/scripts.js" defer></script>
+  <style>
+    #paper, #download, #team, #explore, #stats {
+      display: none;
+    }
+    html, body {
+      overflow: hidden;
+    }
+    /* 预加载主页面的关键资源 */
+    .preload {
+      position: absolute;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+    }
+    .preload img {
+      width: 0;
+      height: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- 预加载主页面的关键资源 -->
+  <div class="preload">
+    <img src="static/images/logo.png" alt="preload logo">
+    <img src="static/images/teaser.png" alt="preload teaser">
+  </div>
+
+  <script>
+    // 预加载主页面
+    const preloadHomePage = () => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'document';
+      link.href = 'home_page.html';
+      document.head.appendChild(link);
+    };
+    
+    // 页面加载完成后预加载主页面
+    window.addEventListener('load', preloadHomePage);
+
+    // 点击事件处理
+    document.addEventListener('click', function() {
+        window.location.href = 'home_page.html'; 
+    });
+  </script>
+
+  <div id="loading-screen"></div>
+  <div id="content">
+    <!-- Navbar Section -->
+    <header class="header">
+      <div class="header-top" style="top: 30%;">
+        <div class="logo" style="font-family: 'CustomFont', sans-serif; font-size: 15vw;">BridgeVLA</div>
+        <div class="please-scroll-2" style="top: 160%;">
+          <span id="reminder" style="font-size: 2vw;">Input-Output Alignment for Efficient 3D Manipulation </span>
+          <span id="reminder" style="font-size: 2vw;">Learning with Vision-Language Models </span>
+        </div>
+      </div>
+      <div class="please-scroll">
+        <span id="reminder">Please click to continue!</span>
+      </div>
+    </header>
+    <nav id="navigation-left"></nav>
+  </div>
+</body>
+</html>
