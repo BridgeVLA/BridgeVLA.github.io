@@ -13,6 +13,29 @@ body {
     margin-bottom: 5px;
 }
 
+.bridgevla-plus-notice {
+    max-width: 680px;
+    margin: 18px auto 0;
+    padding: 14px 20px;
+    border: 2px solid #3273dc;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #eef6ff, #f5f0ff);
+    box-shadow: 0 4px 14px rgba(50, 115, 220, 0.18);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.bridgevla-plus-notice a {
+    color: #2456a6;
+    font-weight: 700;
+}
+
+.bridgevla-plus-notice a:hover,
+.bridgevla-plus-notice a:focus {
+    color: #163f7a;
+    text-decoration: underline;
+}
+
 @font-face {
   font-family: 'CustomFont';
   src: url('../Gilroy Bold Italic.otf') format('truetype');
